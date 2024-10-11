@@ -1,26 +1,26 @@
 #include <stdio.h>
 
-void arrayDividieren(double arr[], int anzahl, int parameter) {
+void arrayDividieren(double arr[], int count, int parameter) {
 
 	while (1) {
 
-		double summe = 0.0;
+		double sum = 0.0;
 
-		for (int i = 0; i < anzahl; i++) {
-			summe += arr[i];
+		for (int i = 0; i < count; i++) {
+			sum += arr[i];
 		}
 
-		double durchschnitt = summe / anzahl;
+		double average = sum / count;
 
-		if (durchschnitt < parameter) {
-			printf("Ende.Mittelwert ist kleiner als der gegebene Parameter. \n");
+		if (average < parameter) {
+			printf("End. The average is smaller than the given parameter. \n");
 			printf("\n");
 			break;
 		}
 
-		printf("Die Ergebnisse sind: \n");
+		printf("The results are: \n");
 
-		for (int i = 0; i < anzahl; i++) {
+		for (int i = 0; i < count; i++) {
 			arr[i] /= 2;
 			printf("%.2lf ", arr[i]);
 		}
@@ -29,11 +29,11 @@ void arrayDividieren(double arr[], int anzahl, int parameter) {
 	}
 }
 
-void printResult(double arr[], int anzahl){
+void printResult(double arr[], int count){
 
-	printf("Die endlichen Werte: ");
+	printf("The final values: ");
 
-	for (int i = 0; i < anzahl; i++) {
+	for (int i = 0; i < count; i++) {
 		printf("%.2lf ", arr[i]);
 	}
 
@@ -42,23 +42,23 @@ void printResult(double arr[], int anzahl){
 
 int main() {
 
-	int anzahl, parameter;
+	int count, parameter;
 	double arr[100];
 
-	printf("Anzahl der Werte: ");
-	scanf_s("%d", &anzahl);
+	printf("Number of values: ");
+	scanf_s("%d", &count);
 
 
-	while (anzahl > 100 || anzahl < 0) {
+	while (count > 100 || count < 0) {
 
-		printf("Bitte geben Sie einen korrekten Wert: ");
-		scanf_s("%d", &anzahl);
+		printf("Please enter a correct value: ");
+		scanf_s("%d", &count);
 	}
 
 
-	for (int i = 0; i < anzahl; i++) {
+	for (int i = 0; i < count; i++) {
 
-		printf("Alle Werte: ");
+		printf("All values: ");
 		scanf_s("%lf", &arr[i]);
 
 	}
@@ -67,8 +67,8 @@ int main() {
 	scanf_s("%d", &parameter);
 	printf("\n");
 
-	arrayDividieren(arr, anzahl, parameter);
-	printResult(arr, anzahl);
+	arrayDividieren(arr, count, parameter);
+	printResult(arr, count);
 
 
 	return 0;
